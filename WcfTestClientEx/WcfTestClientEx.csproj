@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{1B7ED370-15CF-44DA-8882-FAB5EFCA4965}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WcfTestClientEx</RootNamespace>
+    <AssemblyName>WcfTestClientEx</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>WcfTestClientEx.ico</ApplicationIcon>
+    <StartupObject>Main.Tools.TestClient.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.VirtualTreeGrid">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\PrivateAssemblies\Microsoft.VisualStudio.VirtualTreeGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main\Internal\Performance\CodeMarkerExStartEnd.cs" />
+    <Compile Include="Main\Internal\Performance\CodeMarkers.cs" />
+    <Compile Include="Main\Internal\Performance\CodeMarkerStartEnd.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringResources.Designer.cs">
+      <DependentUpon>StringResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Main\Tools\Common\NativeMethods.cs" />
+    <Compile Include="Main\Tools\Common\SafeClipboard.cs" />
+    <Compile Include="Main\Tools\Common\SdkPathUtility.cs" />
+    <Compile Include="Main\Tools\Common\VersionNumbers.cs" />
+    <Compile Include="Main\Tools\TestClient\AddServiceExecutor.cs" />
+    <Compile Include="Main\Tools\TestClient\AddServiceInputs.cs" />
+    <Compile Include="Main\Tools\TestClient\AddServiceOutputs.cs" />
+    <Compile Include="Main\Tools\TestClient\ApplicationSettings.cs" />
+    <Compile Include="Main\Tools\TestClient\ClientEndpointInfo.cs" />
+    <Compile Include="Main\Tools\TestClient\ClientSettings.cs" />
+    <Compile Include="Main\Tools\TestClient\ConfigFileMappingManager.cs" />
+    <Compile Include="Main\Tools\TestClient\DataContractAnalyzer.cs" />
+    <Compile Include="Main\Tools\TestClient\DataSetPropertyDescriptor.cs" />
+    <Compile Include="Main\Tools\TestClient\DataSetUITypeEditor.cs" />
+    <Compile Include="Main\Tools\TestClient\DiagnosticUtility.cs" />
+    <Compile Include="Main\Tools\TestClient\EditorType.cs" />
+    <Compile Include="Main\Tools\TestClient\ErrorItem.cs" />
+    <Compile Include="Main\Tools\TestClient\ExceptionType.cs" />
+    <Compile Include="Main\Tools\TestClient\ExceptionUtility.cs" />
+    <Compile Include="Main\Tools\TestClient\FileItem.cs" />
+    <Compile Include="Main\Tools\TestClient\NullObject.cs" />
+    <Compile Include="Main\Tools\TestClient\ParameterTreeAdapter.cs" />
+    <Compile Include="Main\Tools\TestClient\Program.cs" />
+    <Compile Include="Main\Tools\TestClient\ResourceHelper.cs" />
+    <Compile Include="Main\Tools\TestClient\RowCol.cs" />
+    <Compile Include="Main\Tools\TestClient\RtlAwareMessageBox.cs" />
+    <Compile Include="Main\Tools\TestClient\SerializableType.cs" />
+    <Compile Include="Main\Tools\TestClient\ServiceAnalyzer.cs" />
+    <Compile Include="Main\Tools\TestClient\ServiceExecutor.cs" />
+    <Compile Include="Main\Tools\TestClient\ServiceInvocationInputs.cs" />
+    <Compile Include="Main\Tools\TestClient\ServiceInvocationOutputs.cs" />
+    <Compile Include="Main\Tools\TestClient\ServiceMethodInfo.cs" />
+    <Compile Include="Main\Tools\TestClient\ServiceProject.cs" />
+    <Compile Include="Main\Tools\TestClient\StringFormatter.cs" />
+    <Compile Include="Main\Tools\TestClient\TestCase.cs" />
+    <Compile Include="Main\Tools\TestClient\ToolingEnvironment.cs" />
+    <Compile Include="Main\Tools\TestClient\TypeMemberInfo.cs" />
+    <Compile Include="Main\Tools\TestClient\TypeProperty.cs" />
+    <Compile Include="Main\Tools\TestClient\UI\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\DataGridWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\DataSetEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\DataSetEditorForm.Designer.cs">
+      <DependentUpon>DataSetEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\ErrorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\ErrorDialog.Designer.cs">
+      <DependentUpon>ErrorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\FileChangingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\FileChangingForm.Designer.cs">
+      <DependentUpon>FileChangingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\FilePage.Designer.cs" />
+    <Compile Include="Main\Tools\TestClient\UI\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\FormattedPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\OptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\OptionsForm.Designer.cs">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\ProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\ProgressDialog.Designer.cs">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\PromptDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\PromptDialog.Designer.cs">
+      <DependentUpon>PromptDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\ServicePage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\StartPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\StartPage.Designer.cs">
+      <DependentUpon>StartPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\TabPageCloseOrderManager.cs" />
+    <Compile Include="Main\Tools\TestClient\UI\WarningPromptDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\WarningPromptDialog.Designer.cs">
+      <DependentUpon>WarningPromptDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\XmlPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\UI\XmlPage.Designer.cs">
+      <DependentUpon>XmlPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Tools\TestClient\ValidationResult.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\ArrayVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\BooleanVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\CharVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\CollectionVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\CompositeVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\ContainerVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\DataSetVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\DateTimeOffsetVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\DateTimeVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\DictionaryVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\EnumVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\GuidVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\KeyValuePairVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\NullableVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\NumericVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\StringVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\TimeSpanVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\UriVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\Variable.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\VariableFactory.cs" />
+    <Compile Include="Main\Tools\TestClient\Variables\XmlQualifiedNameVariable.cs" />
+    <Compile Include="Main\Tools\TestClient\Workspace.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AboutBox.bmp" />
+    <EmbeddedResource Include="Resources\ArrowDown.bmp" />
+    <EmbeddedResource Include="Resources\ArrowUp.bmp" />
+    <EmbeddedResource Include="Resources\Contract.bmp" />
+    <EmbeddedResource Include="Resources\Endpoint.bmp" />
+    <EmbeddedResource Include="Resources\Error.bmp" />
+    <EmbeddedResource Include="Resources\File.bmp" />
+    <EmbeddedResource Include="Resources\Operation.bmp" />
+    <EmbeddedResource Include="Resources\Service.ico" />
+    <EmbeddedResource Include="StringResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Tools\TestClient\UI\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Tools\TestClient\UI\DataSetEditorForm.resx">
+      <DependentUpon>DataSetEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Tools\TestClient\UI\ErrorDialog.resx">
+      <DependentUpon>ErrorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Tools\TestClient\UI\FileChangingForm.resx">
+      <DependentUpon>FileChangingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Tools\TestClient\UI\FilePage.resx" />
+    <EmbeddedResource Include="Main\Tools\TestClient\UI\FormattedPage.resx">
+      <DependentUpon>FormattedPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Tools\TestClient\UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Tools\TestClient\UI\OptionsForm.resx">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Tools\TestClient\UI\ProgressDialog.resx">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Tools\TestClient\UI\PromptDialog.resx">
+      <DependentUpon>PromptDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Tools\TestClient\UI\ServicePage.resx">
+      <DependentUpon>ServicePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Tools\TestClient\UI\StartPage.resx">
+      <DependentUpon>StartPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Tools\TestClient\UI\WarningPromptDialog.resx">
+      <DependentUpon>WarningPromptDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Tools\TestClient\UI\XmlPage.resx">
+      <DependentUpon>XmlPage.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="Dependencies\sdk-tools\al.exe.config" />
+    <None Include="Dependencies\sdk-tools\aspnet_merge.exe.config" />
+    <None Include="Dependencies\sdk-tools\gacutil.exe.config" />
+    <None Include="Dependencies\sdk-tools\IlDasm.chm" />
+    <None Include="Dependencies\sdk-tools\ildasm.exe.config" />
+    <None Include="Dependencies\sdk-tools\lc.exe.config" />
+    <None Include="Dependencies\sdk-tools\mageui.exe.config" />
+    <None Include="Dependencies\sdk-tools\MSBuildTaskHost.exe.config" />
+    <None Include="Dependencies\sdk-tools\PEVerify.exe.config" />
+    <None Include="Dependencies\sdk-tools\sn.exe.config" />
+    <None Include="Dependencies\sdk-tools\SqlMetal.exe.config" />
+    <None Include="Dependencies\sdk-tools\SvcConfigEditor.exe.config" />
+    <None Include="Dependencies\sdk-tools\SvcConfigEditor_4.0.chm" />
+    <None Include="Dependencies\sdk-tools\SvcTraceViewer.chm" />
+    <None Include="Dependencies\sdk-tools\SvcTraceViewer.exe.config" />
+    <None Include="Dependencies\sdk-tools\WFC.exe.config" />
+    <None Include="Dependencies\sdk-tools\WinRes.exe.config" />
+    <None Include="Dependencies\sdk-tools\wsdl.exe.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dependencies\Microsoft.VisualStudio.CodeMarkers.dll" />
+    <Content Include="Dependencies\Microsoft.VisualStudio.Utilities.dll" />
+    <Content Include="Dependencies\Microsoft.VisualStudio.VirtualTreeGrid.dll" />
+    <Content Include="Dependencies\msvcp140.dll" />
+    <Content Include="Dependencies\sdk-tools\1033\flogvwrc.dll" />
+    <Content Include="Dependencies\sdk-tools\1033\gacutlrc.dll" />
+    <Content Include="Dependencies\sdk-tools\1033\IlDasmrc.dll" />
+    <Content Include="Dependencies\sdk-tools\1033\pevrfyrc.dll" />
+    <Content Include="Dependencies\sdk-tools\1033\snrc.dll" />
+    <Content Include="Dependencies\sdk-tools\1033\TrackerUI.dll" />
+    <Content Include="Dependencies\sdk-tools\al.exe" />
+    <Content Include="Dependencies\sdk-tools\aspnet_intern.exe" />
+    <Content Include="Dependencies\sdk-tools\aspnet_merge.exe" />
+    <Content Include="Dependencies\sdk-tools\AxImp.exe" />
+    <Content Include="Dependencies\sdk-tools\clrver.exe" />
+    <Content Include="Dependencies\sdk-tools\CorFlags.exe" />
+    <Content Include="Dependencies\sdk-tools\disco.exe" />
+    <Content Include="Dependencies\sdk-tools\FUSLOGVW.exe" />
+    <Content Include="Dependencies\sdk-tools\gacutil.exe" />
+    <Content Include="Dependencies\sdk-tools\ildasm.exe" />
+    <Content Include="Dependencies\sdk-tools\lc.exe" />
+    <Content Include="Dependencies\sdk-tools\mage.exe" />
+    <Content Include="Dependencies\sdk-tools\mageui.exe" />
+    <Content Include="Dependencies\sdk-tools\mgmtclassgen.exe" />
+    <Content Include="Dependencies\sdk-tools\mpgo.exe" />
+    <Content Include="Dependencies\sdk-tools\MSBuildTaskHost.exe" />
+    <Content Include="Dependencies\sdk-tools\PEVerify.exe" />
+    <Content Include="Dependencies\sdk-tools\ResGen.exe" />
+    <Content Include="Dependencies\sdk-tools\SecAnnotate.exe" />
+    <Content Include="Dependencies\sdk-tools\sgen.exe" />
+    <Content Include="Dependencies\sdk-tools\sn.exe" />
+    <Content Include="Dependencies\sdk-tools\SqlMetal.exe" />
+    <Content Include="Dependencies\sdk-tools\StoreAdm.exe" />
+    <Content Include="Dependencies\sdk-tools\SvcConfigEditor.exe" />
+    <Content Include="Dependencies\sdk-tools\SvcTraceViewer.exe" />
+    <Content Include="Dependencies\sdk-tools\SvcUtil.exe" />
+    <Content Include="Dependencies\sdk-tools\TlbExp.exe" />
+    <Content Include="Dependencies\sdk-tools\TlbImp.exe" />
+    <Content Include="Dependencies\sdk-tools\Tracker.exe" />
+    <Content Include="Dependencies\sdk-tools\WCA.exe" />
+    <Content Include="Dependencies\sdk-tools\WFC.exe" />
+    <Content Include="Dependencies\sdk-tools\WinMDExp.exe" />
+    <Content Include="Dependencies\sdk-tools\WinRes.exe" />
+    <Content Include="Dependencies\sdk-tools\WSatUI.dll" />
+    <Content Include="Dependencies\sdk-tools\wsdl.exe" />
+    <Content Include="Dependencies\sdk-tools\xsd.exe" />
+    <Content Include="Dependencies\sdk-tools\xsltc.exe" />
+    <Content Include="Dependencies\vcruntime140.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)Dependencies" "$(TargetDir)" /E /I /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>
