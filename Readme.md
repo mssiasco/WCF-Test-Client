@@ -9,6 +9,7 @@ Due to the limitations of the WCF Test Client in sorting and searching service m
 - Alphabetical sorting of methods  
 - Option to hide async methods  
 - Filtering and searching through methods  
+- Middle click to close tabs
 
 # Replace with official app
 
