@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Costura.Fody.6.0.0\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.6.0.0\build\Costura.Fody.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -7,12 +8,14 @@
     <ProjectGuid>{1B7ED370-15CF-44DA-8882-FAB5EFCA4965}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>WcfTestClientEx</RootNamespace>
-    <AssemblyName>WcfTestClientEx</AssemblyName>
+    <AssemblyName>WcfTestClient</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>WcfTestClientEx.ico</ApplicationIcon>
     <StartupObject>Main.Tools.TestClient.Program</StartupObject>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -34,6 +37,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Costura, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.6.0.0\lib\netstandard2.0\Costura.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Utilities, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\Microsoft.VisualStudio.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Utilities.Internal, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\LiveShare\Agent\Microsoft.VisualStudio.Utilities.Internal.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.VirtualTreeGrid">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\PrivateAssemblies\Microsoft.VisualStudio.VirtualTreeGrid.dll</HintPath>
     </Reference>
@@ -264,77 +278,34 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="app.manifest" />
-    <None Include="Dependencies\sdk-tools\al.exe.config" />
-    <None Include="Dependencies\sdk-tools\aspnet_merge.exe.config" />
-    <None Include="Dependencies\sdk-tools\gacutil.exe.config" />
-    <None Include="Dependencies\sdk-tools\IlDasm.chm" />
-    <None Include="Dependencies\sdk-tools\ildasm.exe.config" />
-    <None Include="Dependencies\sdk-tools\lc.exe.config" />
-    <None Include="Dependencies\sdk-tools\mageui.exe.config" />
-    <None Include="Dependencies\sdk-tools\MSBuildTaskHost.exe.config" />
-    <None Include="Dependencies\sdk-tools\PEVerify.exe.config" />
-    <None Include="Dependencies\sdk-tools\sn.exe.config" />
-    <None Include="Dependencies\sdk-tools\SqlMetal.exe.config" />
-    <None Include="Dependencies\sdk-tools\SvcConfigEditor.exe.config" />
-    <None Include="Dependencies\sdk-tools\SvcConfigEditor_4.0.chm" />
-    <None Include="Dependencies\sdk-tools\SvcTraceViewer.chm" />
-    <None Include="Dependencies\sdk-tools\SvcTraceViewer.exe.config" />
-    <None Include="Dependencies\sdk-tools\WFC.exe.config" />
-    <None Include="Dependencies\sdk-tools\WinRes.exe.config" />
-    <None Include="Dependencies\sdk-tools\wsdl.exe.config" />
+    <None Include="Tools\sdk-tools\SvcConfigEditor.exe.config" />
+    <None Include="Tools\sdk-tools\SvcConfigEditor_4.0.chm" />
+    <None Include="Tools\sdk-tools\WFC.exe.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Dependencies\Microsoft.VisualStudio.CodeMarkers.dll" />
-    <Content Include="Dependencies\Microsoft.VisualStudio.Utilities.dll" />
-    <Content Include="Dependencies\Microsoft.VisualStudio.VirtualTreeGrid.dll" />
-    <Content Include="Dependencies\msvcp140.dll" />
-    <Content Include="Dependencies\sdk-tools\1033\flogvwrc.dll" />
-    <Content Include="Dependencies\sdk-tools\1033\gacutlrc.dll" />
-    <Content Include="Dependencies\sdk-tools\1033\IlDasmrc.dll" />
-    <Content Include="Dependencies\sdk-tools\1033\pevrfyrc.dll" />
-    <Content Include="Dependencies\sdk-tools\1033\snrc.dll" />
-    <Content Include="Dependencies\sdk-tools\1033\TrackerUI.dll" />
-    <Content Include="Dependencies\sdk-tools\al.exe" />
-    <Content Include="Dependencies\sdk-tools\aspnet_intern.exe" />
-    <Content Include="Dependencies\sdk-tools\aspnet_merge.exe" />
-    <Content Include="Dependencies\sdk-tools\AxImp.exe" />
-    <Content Include="Dependencies\sdk-tools\clrver.exe" />
-    <Content Include="Dependencies\sdk-tools\CorFlags.exe" />
-    <Content Include="Dependencies\sdk-tools\disco.exe" />
-    <Content Include="Dependencies\sdk-tools\FUSLOGVW.exe" />
-    <Content Include="Dependencies\sdk-tools\gacutil.exe" />
-    <Content Include="Dependencies\sdk-tools\ildasm.exe" />
-    <Content Include="Dependencies\sdk-tools\lc.exe" />
-    <Content Include="Dependencies\sdk-tools\mage.exe" />
-    <Content Include="Dependencies\sdk-tools\mageui.exe" />
-    <Content Include="Dependencies\sdk-tools\mgmtclassgen.exe" />
-    <Content Include="Dependencies\sdk-tools\mpgo.exe" />
-    <Content Include="Dependencies\sdk-tools\MSBuildTaskHost.exe" />
-    <Content Include="Dependencies\sdk-tools\PEVerify.exe" />
-    <Content Include="Dependencies\sdk-tools\ResGen.exe" />
-    <Content Include="Dependencies\sdk-tools\SecAnnotate.exe" />
-    <Content Include="Dependencies\sdk-tools\sgen.exe" />
-    <Content Include="Dependencies\sdk-tools\sn.exe" />
-    <Content Include="Dependencies\sdk-tools\SqlMetal.exe" />
-    <Content Include="Dependencies\sdk-tools\StoreAdm.exe" />
-    <Content Include="Dependencies\sdk-tools\SvcConfigEditor.exe" />
-    <Content Include="Dependencies\sdk-tools\SvcTraceViewer.exe" />
-    <Content Include="Dependencies\sdk-tools\SvcUtil.exe" />
-    <Content Include="Dependencies\sdk-tools\TlbExp.exe" />
-    <Content Include="Dependencies\sdk-tools\TlbImp.exe" />
-    <Content Include="Dependencies\sdk-tools\Tracker.exe" />
-    <Content Include="Dependencies\sdk-tools\WCA.exe" />
-    <Content Include="Dependencies\sdk-tools\WFC.exe" />
-    <Content Include="Dependencies\sdk-tools\WinMDExp.exe" />
-    <Content Include="Dependencies\sdk-tools\WinRes.exe" />
-    <Content Include="Dependencies\sdk-tools\WSatUI.dll" />
-    <Content Include="Dependencies\sdk-tools\wsdl.exe" />
-    <Content Include="Dependencies\sdk-tools\xsd.exe" />
-    <Content Include="Dependencies\sdk-tools\xsltc.exe" />
-    <Content Include="Dependencies\vcruntime140.dll" />
+    <Content Include="DLLs\Microsoft.VisualStudio.CodeMarkers.dll" />
+    <Content Include="DLLs\Microsoft.VisualStudio.Utilities.dll" />
+    <Content Include="DLLs\Microsoft.VisualStudio.VirtualTreeGrid.dll" />
+    <Content Include="DLLs\msvcp140.dll" />
+    <Content Include="Tools\sdk-tools\SvcConfigEditor.exe" />
+    <Content Include="Tools\sdk-tools\SvcUtil.exe" />
+    <Content Include="Tools\sdk-tools\WFC.exe" />
+    <Content Include="DLLs\vcruntime140.dll" />
+    <Content Include="FodyWeavers.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)Dependencies" "$(TargetDir)" /E /I /Y</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(ProjectDir)Tools" "$(TargetDir)" /E /I /Y</PostBuildEvent>
   </PropertyGroup>
+  <Import Project="..\packages\Fody.6.9.2\build\Fody.targets" Condition="Exists('..\packages\Fody.6.9.2\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.6.9.2\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.9.2\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.6.0.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.6.0.0\build\Costura.Fody.props'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.6.0.0\build\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.6.0.0\build\Costura.Fody.targets'))" />
+  </Target>
+  <Import Project="..\packages\Costura.Fody.6.0.0\build\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.6.0.0\build\Costura.Fody.targets')" />
 </Project>
